@@ -6,10 +6,22 @@ plugins {
 }
 
 group = 'moe.mchdf'
-version = '0.0.1-SNAPSHOT'
+version = '1.0.0'
+
+jar {
+    finalizedBy shadowJar
+    manifest {
+        attributes 'Main-Class': 'moe.mchdf.mcapi.McapiApplication'
+    }
+}
+
+shadowJar {
+    archiveFileName = "MCAPI-${project.version}.jar"
+    println "Version : '${project.version}'"
+}
 
 java {
-    sourceCompatibility = '21'
+    sourceCompatibility = '17'
 }
 
 repositories {
@@ -19,8 +31,13 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-}
 
-tasks.named('test') {
-    useJUnitPlatform()
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    // https://mvnrepository.com/artifact/net.dv8tion/JDA
+    implementation 'net.dv8tion:JDA:5.0.0-beta.17'
+
+    implementation group: 'it.unimi.dsi', name: 'fastutil', version: '8.5.12'
+    implementation "io.github.cdimascio:java-dotenv:5.2.2"
+
 }
