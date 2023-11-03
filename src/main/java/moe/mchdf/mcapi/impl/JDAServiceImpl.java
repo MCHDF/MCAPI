@@ -1,4 +1,4 @@
-package moe.mchdf.mcapi.service.impl;
+package moe.mchdf.mcapi.impl;
 
 import moe.mchdf.mcapi.ERROR;
 import moe.mchdf.mcapi.EnvData;

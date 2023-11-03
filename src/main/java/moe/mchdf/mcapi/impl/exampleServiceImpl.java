@@ -1,4 +1,4 @@
-package moe.mchdf.mcapi.service.impl;
+package moe.mchdf.mcapi.impl;
 
 import moe.mchdf.mcapi.service.exampleService;
 import org.springframework.stereotype.Service;
