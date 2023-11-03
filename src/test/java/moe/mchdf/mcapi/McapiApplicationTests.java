@@ -1,4 +1,4 @@
-package com.example.mcapi;
+package moe.mchdf.mcapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

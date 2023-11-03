@@ -1,4 +1,4 @@
-package com.example.mcapi;
+package moe.mchdf.mcapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
