@@ -29,15 +29,22 @@ repositories {
 }
 
 dependencies {
+
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.boot:spring-boot-starter-web-services'
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+
 
     // https://mvnrepository.com/artifact/org.projectlombok/lombok
     compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+    testCompileOnly 'org.projectlombok:lombok:1.18.30'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
+
     // https://mvnrepository.com/artifact/net.dv8tion/JDA
     implementation 'net.dv8tion:JDA:5.0.0-beta.17'
 
     implementation group: 'it.unimi.dsi', name: 'fastutil', version: '8.5.12'
     implementation "io.github.cdimascio:java-dotenv:5.2.2"
-
 }

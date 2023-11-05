@@ -4,7 +4,7 @@ import moe.mchdf.mcapi.ERROR;
 import moe.mchdf.mcapi.EnvData;
 import moe.mchdf.mcapi.MCBOT;
 import moe.mchdf.mcapi.service.JDAService;
-import net.dv8tion.jda.api.entities.Member;
+import net.dv8tion.jda.api.entities.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -41,12 +41,12 @@ public class JDAServiceImpl implements JDAService {
         } else {
             LOGGER.info("멤버 인식됨. (" + id + ")");
         }
-        Member member = MCBOT.bot.getGuildById(EnvData.DISCORD_GUILD).getMemberById(id);
+        User user = MCBOT.bot.getGuildById(EnvData.DISCORD_GUILD).getMemberById(id).getUser();
 
         userDSData.put("id", id);
-        userDSData.put("username", member.getUser().getName());
-        userDSData.put("createdTimestamp", member.getTimeCreated());
-        userDSData.put("avartarURL", member.getUser().getAvatarUrl() != null ? member.getUser().getAvatarUrl() : "none");
+        userDSData.put("username", user.getName());
+        userDSData.put("createdTimestamp", user.getTimeCreated());
+        userDSData.put("avartarURL", user.getAvatarUrl() != null ? user.getAvatarUrl() : "none");
         return userDSData;
     }
 }

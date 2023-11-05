@@ -8,7 +8,7 @@ public class McapiApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(McapiApplication.class, args);
-        MCBOT.startBOT();
+        // MCBOT.startBOT();
     }
 
 }
